@@ -32,7 +32,7 @@ def close_nfqueue(nfqueue_num: int, hook: str, nfqueue: NetfilterQueue):
     nfqueue.unbind()
 
 
-def get_args():
+def get_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--nfqueue_num", type=int,  default=1, help="nfqueue number")
     parser.add_argument("--hook", type=str, default="PREROUTING", help="nfqueue hook")
